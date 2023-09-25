@@ -1,0 +1,12 @@
+ private void changeMoneyUnit(){
+        int rowIdx = spnUnits.getSelectedItemPosition();
+        if (rowIdx < 0 ) rowIdx = 0;
+        String input = txtNumber.getText().toString();
+        if (input.isEmpty())
+            input="0";
+        double number = Double.valueOf(input);
+        for (int i = 0; i < lblResults.length; i++){
+            double temp = number * ratio[rowIdx][i];
+            lblResults[i].setText(String().valueOf(temp));
+
+        }
